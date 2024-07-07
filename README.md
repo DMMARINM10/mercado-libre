@@ -10,6 +10,7 @@ This is a monorepo where both the frontend and backend of the application are lo
 
 ```
 cd backend-mercado-libre
+npm install
 npm start
 ```
 
@@ -17,6 +18,7 @@ npm start
 
 ```
 cd frontend-mercado-libre
+npm install
 npm run dev
 ```
 
