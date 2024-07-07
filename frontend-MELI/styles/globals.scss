@@ -1,0 +1,73 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  min-width: 745px;
+}
+
+.content {
+  width: 100%;
+  background-color: $quaternary-color;
+  min-height: calc(100vh - 50px);
+  padding: 0 calc((100% - (70% + 75px)) / 2) 100px;
+}
+
+.container {
+    background-color: white;
+    width: 100%;
+    border-radius: 4px;
+    padding: 0 16px;
+
+}
+  
+.item-container {
+  padding: 32px;
+  display: flex;
+}
+
+// logo
+.logo {
+  cursor: pointer;
+}
+
+// loader
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-container {
+  @include flex-center;
+  width: 100%;
+  height: calc(100vh - 150px);
+}
+
+.loader {
+  border: 5px solid $quaternary-color;
+  border-top: 5px solid $tertiary-color;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+}
+
+// error
+.error {
+  @include flex-center;
+  color: red;
+  height: calc(100vh - 150px);
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+@import '../variables.scss';
+
+.breadcrumb {
+    display: flex;
+    list-style-type: none;
+    color: $tertiary-color;
+    gap: 5px;
+
+    li {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin: 16px 0;
+    }
+}

@@ -1,0 +1,44 @@
+@import '../variables.scss';
+
+.item-card {
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    text-decoration: none;
+}
+
+.item-card {
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $quaternary-color;
+    }
+}
+
+.item-picture {
+    border-radius: 4px;
+}
+
+.item-metadata {
+    flex-grow: 1;
+    color: $secondary-color;
+
+    p {
+        font-size: 24px;
+        margin-bottom: 32px;
+
+        img {
+            font-size: 14px;
+        }
+    }
+
+    h2 {
+        font-size: 18px;
+        font-weight: lighter;
+    }
+}
+
+.item-seller {
+    min-width: 180px;
+    font-size: 12px;
+    color: $tertiary-color;
+}
