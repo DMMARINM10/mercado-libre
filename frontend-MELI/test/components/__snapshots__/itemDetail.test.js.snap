@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemDetail component should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="item-detail-left"
+  >
+    <img
+      alt="picture-item-1"
+      height="680"
+      src="http://random-url.jpg"
+      width="680"
+    />
+    <div
+      class="item-description-container"
+    >
+      <h2>
+        Descripción del producto
+      </h2>
+      <p>
+        Test description
+      </p>
+    </div>
+  </div>
+  <div
+    class="item-detail-right"
+  >
+    <p
+      class="item-detail-condition"
+    >
+      Nuevo - 10 vendidos
+    </p>
+    <div
+      class="item-detail-metadata"
+    >
+      <h1>
+        Test title
+      </h1>
+      <p>
+        $ 1.000
+      </p>
+      <button>
+        Comprar
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

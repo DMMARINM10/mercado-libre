@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main Layout component should match the snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="search-bar-container"
+  >
+    <img
+      alt="Mercado Libre Logo"
+      class="logo"
+      data-nimg="1"
+      decoding="async"
+      fetchpriority="high"
+      height="50"
+      src="/_next/image?url=%2Fimg.jpg&w=128&q=75"
+      srcset="/_next/image?url=%2Fimg.jpg&w=64&q=75 1x, /_next/image?url=%2Fimg.jpg&w=128&q=75 2x"
+      style="color: transparent;"
+      width="50"
+    />
+    <fieldset>
+      <label
+        for="input-search-bar"
+        hidden=""
+      />
+      <input
+        id="input-search-bar"
+        placeholder="Nunca dejes de buscar"
+        type="text"
+        value="test search"
+      />
+      <button>
+        <img
+          alt="Search icon"
+          data-nimg="1"
+          decoding="async"
+          fetchpriority="high"
+          height="15"
+          src="/_next/image?url=%2Fimg.jpg&w=32&q=75"
+          srcset="/_next/image?url=%2Fimg.jpg&w=16&q=75 1x, /_next/image?url=%2Fimg.jpg&w=32&q=75 2x"
+          style="color: transparent;"
+          width="15"
+        />
+      </button>
+    </fieldset>
+  </header>
+  <main
+    class="content"
+  >
+    <div
+      data-testid="test-child"
+    >
+      Child Component
+    </div>
+  </main>
+</DocumentFragment>
+`;

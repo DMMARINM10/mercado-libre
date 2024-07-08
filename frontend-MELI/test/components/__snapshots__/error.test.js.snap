@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error component should match the snapshot 1`] = `
+<DocumentFragment>
+  <p
+    class="error"
+  >
+    ¡Algo salió mal!
+    <br />
+    :(
+  </p>
+</DocumentFragment>
+`;

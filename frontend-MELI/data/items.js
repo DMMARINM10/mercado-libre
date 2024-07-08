@@ -4,5 +4,5 @@ const ITEM_CONDITION = {
 }
 
 export const itemCondition = (condition) => {
-    return ITEM_CONDITION[condition];
+    return ITEM_CONDITION[condition] || '';
 }
