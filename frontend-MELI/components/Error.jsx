@@ -1,6 +1,6 @@
 const Error = () => {
   return (
-    <p className="error">
+    <p data-testid="error" className="error">
         ¡Algo salió mal!
         <br /> 
         {':('}

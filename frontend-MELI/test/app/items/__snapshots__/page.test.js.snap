@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Items Page Component should match the snapshot 1`] = `
+<DocumentFragment>
+  <nav>
+    <ul
+      class="breadcrumb"
+    >
+      <li>
+        cat1
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSize14px css-821wyw-MuiSvgIcon-root"
+          data-testid="ArrowForwardIosIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
+          />
+        </svg>
+      </li>
+      <li>
+        cat2
+      </li>
+    </ul>
+  </nav>
+  <section
+    class="container"
+    data-testid="items-page-data"
+  >
+    <a
+      class="item-card"
+      href="/items/1"
+    >
+      <img
+        alt="picture-item-1"
+        class="item-picture"
+        data-nimg="1"
+        decoding="async"
+        height="180"
+        loading="lazy"
+        src="/_next/image?url=http%3A%2F%2Fpicture1.jpg&w=384&q=75"
+        srcset="/_next/image?url=http%3A%2F%2Fpicture1.jpg&w=256&q=75 1x, /_next/image?url=http%3A%2F%2Fpicture1.jpg&w=384&q=75 2x"
+        style="color: transparent;"
+        width="180"
+      />
+      <span
+        class="item-metadata"
+      >
+        <p>
+          $ 100 
+          <img
+            alt="free shipping icon"
+            data-nimg="1"
+            decoding="async"
+            height="16"
+            loading="lazy"
+            src="/_next/image?url=%2Fimg.jpg&w=32&q=75"
+            srcset="/_next/image?url=%2Fimg.jpg&w=16&q=75 1x, /_next/image?url=%2Fimg.jpg&w=32&q=75 2x"
+            style="color: transparent;"
+            width="16"
+          />
+        </p>
+        <h2>
+          item1
+        </h2>
+      </span>
+      <p
+        class="item-seller"
+      >
+        seller1
+      </p>
+    </a>
+    <a
+      class="item-card"
+      href="/items/2"
+    >
+      <img
+        alt="picture-item-2"
+        class="item-picture"
+        data-nimg="1"
+        decoding="async"
+        height="180"
+        loading="lazy"
+        src="/_next/image?url=http%3A%2F%2Fpicture2.jpg&w=384&q=75"
+        srcset="/_next/image?url=http%3A%2F%2Fpicture2.jpg&w=256&q=75 1x, /_next/image?url=http%3A%2F%2Fpicture2.jpg&w=384&q=75 2x"
+        style="color: transparent;"
+        width="180"
+      />
+      <span
+        class="item-metadata"
+      >
+        <p>
+          $ 200 
+        </p>
+        <h2>
+          item2
+        </h2>
+      </span>
+      <p
+        class="item-seller"
+      >
+        seller2
+      </p>
+    </a>
+  </section>
+</DocumentFragment>
+`;

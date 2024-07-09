@@ -4,6 +4,7 @@ exports[`Error component should match the snapshot 1`] = `
 <DocumentFragment>
   <p
     class="error"
+    data-testid="error"
   >
     ¡Algo salió mal!
     <br />

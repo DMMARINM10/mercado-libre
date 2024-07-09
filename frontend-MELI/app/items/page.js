@@ -7,7 +7,6 @@ import Card from "@/components/Card"
 import Loader from "@/components/Loader"
 import { fetcher } from "@/helpers/fetch"
 import Error from "@/components/Error"
-import { Suspense } from "react"
 
 
 const Items = () => {
@@ -34,7 +33,7 @@ const Items = () => {
         data &&
         <>
           <Breadcrumb breadcrumb={breadcrumb} />
-          <section className="container">
+          <section data-testid="items-page-data" className="container">
           {
             items?.map((item) => {
               const { id, picture, price, title, seller, free_shipping: freeShipping } = item
