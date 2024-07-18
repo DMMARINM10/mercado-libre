@@ -18,7 +18,8 @@ describe('ItemDetail component', () => {
     condition: 'new',
     soldQuantity: 10,
     title: 'Test title',
-    price: 1000
+    price: 1000,
+    decimals: 0.10,
   };
 
   beforeEach(() => {

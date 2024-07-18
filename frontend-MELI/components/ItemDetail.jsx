@@ -1,9 +1,9 @@
 import Image from "next/image"
 import { itemCondition } from "@/data/items"
-import { formatNumber } from "@/helpers/utils"
+import { decimalFormat, formatNumber } from "@/helpers/utils"
 import styles from '@/styles/components/itemDetail.module.scss'
 
-const ItemDetail = ({ id, picture, description, condition, soldQuantity, title, price }) => {
+const ItemDetail = ({ id, picture, description, condition, soldQuantity, title, price, decimals }) => {
   return (
     <>
       <div className={styles['item-detail-left']}>
@@ -17,7 +17,9 @@ const ItemDetail = ({ id, picture, description, condition, soldQuantity, title, 
         <p className={styles['item-detail-condition']}>{itemCondition(condition)} - {soldQuantity} vendidos</p>
         <div className={styles['item-detail-metadata']}>
           <h1>{title}</h1>
-          <p>$ {formatNumber(price)}</p>
+          <p>$ {formatNumber(price)} 
+            <span>{decimalFormat(decimals)}</span>
+          </p>
           <button>Comprar</button>
         </div>
       </div>

@@ -26,6 +26,7 @@ const ItemCard = async({ item }) => {
   const description = itemData?.description;
   const title = itemData?.title;
   const price = itemData?.price?.amount;
+  const decimals = itemData?.price?.decimals;
   const condition = itemData?.condition;
   const soldQuantity = itemData?.sold_quantity;
   const categories = itemData?.categories;
@@ -45,6 +46,7 @@ const ItemCard = async({ item }) => {
               description={description} 
               title={title} 
               price={price} 
+              decimals={decimals}
               condition={condition} 
               soldQuantity={soldQuantity} 
             />

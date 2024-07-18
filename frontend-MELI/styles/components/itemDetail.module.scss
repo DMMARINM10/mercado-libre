@@ -47,6 +47,13 @@
 
     p {
         font-size: 46px;
+        display: flex;
+        align-items: flex-start;
+
+        span {
+            font-size: 25px;
+            margin-top: 3px;
+        }
     }
 
     button {
