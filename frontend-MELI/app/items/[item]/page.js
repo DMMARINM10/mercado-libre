@@ -1,9 +1,9 @@
 import { Suspense } from "react";
 import Loader from "@/components/Loader";
 import Breadcrumb from "@/components/Breadcrumbs";
-import { getItem } from "@/helpers/fetch";
 import ItemDetail from "@/components/ItemDetail";
 import Error from "@/components/Error";
+import { getItem } from "@/services/items";
 
 export async function generateMetadata ({ params }) {
   const { data, error } = await getItem(params.item)

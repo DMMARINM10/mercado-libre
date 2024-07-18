@@ -5,8 +5,8 @@ import { useSearchParams } from "next/navigation"
 import Breadcrumb from "@/components/Breadcrumbs"
 import Card from "@/components/Card"
 import Loader from "@/components/Loader"
-import { fetcher } from "@/helpers/fetch"
 import Error from "@/components/Error"
+import { fetcher } from "@/services/fetcher"
 
 
 const Items = () => {

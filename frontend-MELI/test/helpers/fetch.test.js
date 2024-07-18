@@ -1,4 +1,5 @@
-import { fetcher, getItem } from "@/helpers/fetch";
+import { getItem } from "@/services/items";
+import { fetcher } from "@/services/fetcher";
 
 const resolvedData = { data: 'Test' }
 
