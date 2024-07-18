@@ -1,5 +1,5 @@
+import { Suspense } from "react";
 import "@/styles/globals.scss";
-
 import SearchBar from "@/components/SearchBar";
 
 export const metadata = {
@@ -9,12 +9,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body>
-        <SearchBar />
-        <main className="content">
-          {children}
-        </main>
+        <Suspense fallback={<></>}>
+          <SearchBar />
+          <main className="content">
+            {children}
+          </main>
+        </Suspense>
       </body>
     </html>
   );
