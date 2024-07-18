@@ -5,6 +5,7 @@ Search engine that allows you to search for Mercado Libre items and review the d
 ## How to start?
 
 This is a monorepo where both the frontend and backend of the application are located, which must be run separately on two terminals.
+Before starting, node version required is >=18.17.0
 
 ### Backend
 
