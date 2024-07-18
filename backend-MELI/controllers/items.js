@@ -24,8 +24,15 @@ const getSearchResults = async (req = request, res = response) => {
         const jsonData = await data.json();
         const categories = arrayCategories(jsonData);
         const items = jsonData.results.map((item) => {
-            const { id, title, sale_price, thumbnail: picture, shipping, condition, seller } = item;
-            const { amount, currency_id: currency } = sale_price;
+            const { id, 
+                title, 
+                currency_id: currency, 
+                price: amount, 
+                thumbnail: picture, 
+                shipping, 
+                condition, 
+                seller 
+            } = item;
             const { free_shipping } = shipping;
             const { nickname } = seller;
             const { integer, decimals } = numberSeparation(amount);
@@ -57,6 +64,19 @@ const getSearchResults = async (req = request, res = response) => {
     }
 };
 
+const getItemCategories = async(categoryId) => {
+    const data = await fetch(`${categoryUrl}/${categoryId}`)
+    const jsonData = await data.json();
+    if (jsonData.error) {
+        return res.status(404).json({
+            message: 'Resource not found'
+        });
+    }
+    const { path_from_root } = jsonData;
+    const categories = path_from_root.map((path) => path.name)
+    return categories
+}
+
 const getItem = (req = request, res = response) => {
     const { id } = req.params;
     const productUrl = `${itemUrl}/${id}`;
@@ -65,71 +85,62 @@ const getItem = (req = request, res = response) => {
     const fetchItemDescription = fetch(`${productUrl}/description`).then(response => response.json());
     
     Promise.all([fetchItem, fetchItemDescription])
-    .then(([dataItem, dataDescription]) => {
+    .then(async([dataItem, dataDescription]) => {
         if (dataItem.error || dataDescription.error) {
             return res.status(404).json({
                 message: 'Resource not found'
             });
         }
-        const { id,
-            title,
-            price,
-            currency_id: currency,
-            pictures,
-            condition,
-            shipping,
-            initial_quantity: sold_quantity,
-            category_id,
-        } = dataItem;
-        const { plain_text: description } = dataDescription;
-        const { integer, decimals } = numberSeparation(price);
-        const picture = pictures[0].secure_url;
-        const { free_shipping } = shipping;
 
-        fetch(`${categoryUrl}/${category_id}`)
-        .then((response) => response.json())
-        .then(response => {
-                if (response.error) {
-                    return res.status(404).json({
-                        message: 'Resource not found'
-                    });
+        try {
+            const { id,
+                title,
+                price,
+                currency_id: currency,
+                pictures,
+                condition,
+                shipping,
+                initial_quantity: sold_quantity,
+                category_id: categoryId,
+            } = dataItem;
+            const { plain_text: description } = dataDescription;
+            const { integer, decimals } = numberSeparation(price);
+            const { secure_url: picture } = pictures[0];
+            const { free_shipping } = shipping;
+            const categories = await getItemCategories(categoryId);
+            res.json({
+                author,
+                item: {
+                    id,
+                    title,
+                    price: {
+                        currency,
+                        amount: integer,
+                        decimals: decimals,
+                    },
+                    picture,
+                    condition,
+                    free_shipping,
+                    sold_quantity,
+                    description,
+                    categories,
                 }
-                const { path_from_root } = response;
-                const categories = path_from_root.map((path) => path.name)
-                res.json({
-                    author,
-                    item: {
-                        id,
-                        title,
-                        price: {
-                            currency,
-                            amount: integer,
-                            decimals: decimals,
-                        },
-                        picture,
-                        condition,
-                        free_shipping,
-                        sold_quantity,
-                        description,
-                        categories,
-                    }
-                })
             })
-            .catch(error => {
-                console.error(error);
-                res.status(500).json({
-                    msg: 'Internal Server Error',
-                    error
-                })
-            });
-        })
-        .catch(error => {
+        } catch (error) {
             console.error(error);
             res.status(500).json({
                 msg: 'Internal Server Error',
                 error
             })
-        });
+        }
+    })
+    .catch(error => {
+        console.error(error);
+        res.status(500).json({
+            msg: 'Internal Server Error',
+            error
+        })
+    });
 
 };
 
